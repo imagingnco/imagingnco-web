@@ -2,9 +2,8 @@
   <div class="navbar">
     <div id="banner"><img src="@/assets/banner.png" /></div>
     <router-link to="/">Home</router-link>
-    <router-link to="/batch">Batch Processing</router-link>
-    <a href="marketplace">Marketplace</a>
-    <router-link to="/about">About</router-link>
+    <router-link to="/batch">Process Image</router-link>
+    <router-link to="/about">Contact us</router-link>
   </div>
 </template>
 
@@ -24,7 +23,7 @@ $navbar_padding: 20px;
   position: fixed;
   top: 0;
   width: calc(100% - 2 * #{$navbar_padding});
-  height: 120px;
+  height: 66px;
   margin: 0;
   overflow: hidden;
   background-color: $nav_background;
@@ -38,11 +37,19 @@ $navbar_padding: 20px;
   display: block;
   color: $text_color;
   text-align: center;
-  margin: 40px 0px;
-  padding: 14px 16px;
+  margin: 18px 10px;
   text-decoration: none;
+
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #ffffff;
 }
 
+/*
 .navbar a:hover {
   background-color: $primary_color;
 }
@@ -56,16 +63,16 @@ $navbar_padding: 20px;
   transform: translateY(8px);
   opacity: 0.5;
 }
+*/
 
 #banner {
   position: absolute;
   top: 10px;
-  left: 40%;
-  max-height: 100px;
+  left: 2%;
 }
 
 #banner img {
-  max-height: 100px;
+  max-height: 46px;
 }
 
 @media screen and (max-width: 800px) {

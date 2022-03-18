@@ -1,15 +1,5 @@
 <template>
   <div>
-    <Slide>
-      <button v-on:click="loadPlugin(pluginUrl)">add plugin</button>
-      <input
-        v-model="pluginUrl"
-        placeholder="https://lenna.app/lenna-plugins/desaturate/remoteEntry.js"
-      />
-      <br />
-      <ConfigComp v-if="pluginsManager" :plugins="pluginsManager.plugins" />
-      <Help />
-    </Slide>
     <div class="main">
       <h1>Convert images online without upload of your data</h1>
       <h2 v-if="just">{{ just }}</h2>
@@ -40,12 +30,9 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import * as NProgress from "nprogress";
-import { Slide } from "vue3-burger-menu";
 import { useToast } from "vue-toastification";
 import PluginsManager from "../components/PluginsManager.vue";
 import ImageUploadPreview from "../components/ImageUploadPreview.vue";
-import ConfigComp from "../components/ConfigComp.vue";
-import Help from "../components/Help.vue";
 import { PluginManager } from "../controllers/plugin_manager";
 import { Image, ImageSource } from "../models/image";
 import { processImages } from "../controllers/processor";
@@ -64,11 +51,8 @@ export declare interface HomeData {
 export default defineComponent({
   name: "Home",
   components: {
-    Slide,
     PluginsManager,
     ImageUploadPreview,
-    ConfigComp,
-    Help,
   },
   data(): HomeData {
     return {
