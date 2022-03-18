@@ -16,7 +16,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
 #title {
   font-family: "Quicksand";
   font-style: normal;
@@ -27,25 +27,32 @@ export default {
 }
 #container {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #tile1 {
+  margin: 20px;
   width: 561px;
   height: 374px;
 
   border-radius: 17px;
-  background-image: url("~@/assets/about_project_tile1.jpg");
+  background-image: url("../assets/about_project_tile1.jpg");
+  background-size: contain;
 }
 #tile2 {
+  margin: 20px;
+  padding: 110px 30px;
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
   color: #000000;
-  
-  width: 557px;
-  height: 346px;
-  background: #f3dfe0;
-  background-image: url("~@/assets/about_project_tile2.svg");
+
+  width: 495px;
+  height: 104px;
+  background-image: url("../assets/about_project_tile2.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 </style>
