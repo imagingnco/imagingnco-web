@@ -23,6 +23,7 @@
         <hr />
         <div class="plus radius" v-on:click="onMorePlugins()"></div>
       </div>
+      <HowToConvert />
     </div>
   </div>
 </template>
@@ -33,6 +34,7 @@ import * as NProgress from "nprogress";
 import { useToast } from "vue-toastification";
 import PluginsManager from "../components/PluginsManager.vue";
 import ImageUploadPreview from "../components/ImageUploadPreview.vue";
+import HowToConvert from "../components/HowToConvert.vue";
 import { PluginManager } from "../controllers/plugin_manager";
 import { Image, ImageSource } from "../models/image";
 import { processImages } from "../controllers/processor";
@@ -53,6 +55,7 @@ export default defineComponent({
   components: {
     PluginsManager,
     ImageUploadPreview,
+    HowToConvert,
   },
   data(): HomeData {
     return {
