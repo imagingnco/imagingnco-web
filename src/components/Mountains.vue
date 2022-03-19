@@ -25,7 +25,7 @@
 #mountain1 {
   width: 480px;
   height: 320px;
-  background: url("../assets/mountain1.jpg");
+  background: url("../assets/mountain1.png");
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 17px;
 }
@@ -34,7 +34,7 @@
   margin: 5px;
   width: 224px;
   height: 150px;
-  background: url("../assets/mountain2.jpg");
+  background: url("../assets/mountain2.png");
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 14px;
 }
@@ -43,7 +43,7 @@
   margin: 5px;
   width: 224px;
   height: 150px;
-  background: url("../assets/mountain3.jpg");
+  background: url("../assets/mountain3.png");
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 14px;
 }

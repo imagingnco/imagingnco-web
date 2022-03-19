@@ -19,15 +19,7 @@ module.exports = {
     publicPath: "auto",
   },
   module: {
-    rules: [
-      {
-        test: /\.(png|gif)$/i,
-        use: {
-          loader: "url-loader",
-          options: { limit: 8192 },
-        },
-      }
-    ],
+    rules: [],
   },
   plugins: [
     new ModuleFederationPlugin({
