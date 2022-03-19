@@ -54,11 +54,11 @@ export default defineComponent({
   border-radius: 25px;
   outline: none;
   transition-duration: 0.3s;
-  background-color: #a2f6f2;
+  background-color: #363636;
   cursor: pointer;
 }
 .checkbox > input:checked {
-  background-color: #a2f6f2;
+  background-color: #363636
 }
 .checkbox > input:checked + span::before {
   font-size: 2.4em;

@@ -3,19 +3,6 @@
     <div class="main">
       <h2 v-if="just">{{ just }}</h2>
       <div class="top_main">
-        <ImageUpload
-          class="v-step-3"
-          ref="imageUpload"
-          @changeImage="changeImages($event)"
-        />
-        <div id="process">
-          <button class="v-step-5" v-on:click="processImages">
-            process images
-          </button>
-        </div>
-        <ImagePreview class="v-step-6" :images="resultImages" />
-      </div>
-      <div class="bottom_main">
         <PluginsManager
           class="v-step-4"
           ref="pluginsManager"
@@ -23,11 +10,21 @@
           :defaultConfig="defaultConfig"
           :defaultPlugins="defaultPlugins"
         />
+        <div id="center_main">
+          <ImageUpload
+            class="v-step-3"
+            ref="imageUpload"
+            @changeImage="changeImages($event)"
+          />
+        </div>
+        <div id="process">
+          <button class="v-step-5" v-on:click="processImages">
+            process images
+          </button>
+          <ImagePreview class="v-step-6" :images="resultImages" />
+        </div>
       </div>
-      <div id="line">
-        <hr />
-        <div class="plus radius" v-on:click="onMorePlugins()"></div>
-      </div>
+      <div class="bottom_main"></div>
     </div>
   </div>
 </template>
@@ -59,7 +56,7 @@ export default defineComponent({
   components: {
     PluginsManager,
     ImageUpload,
-    ImagePreview
+    ImagePreview,
   },
   data(): BatchData {
     return {
@@ -193,6 +190,9 @@ export default defineComponent({
   padding-top: 20px;
   padding-bottom: 0;
 }
+#center_main {
+  margin-top: 10%;
+}
 #process button {
   margin-top: 40%;
   width: 350px;
@@ -206,10 +206,6 @@ export default defineComponent({
 }
 #process button:hover {
   transform: scale(1.05);
-}
-#line {
-  margin-top: 50px;
-  position: relative;
 }
 
 .plus {

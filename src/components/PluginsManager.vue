@@ -2,6 +2,8 @@
   <div class="plugins-manager">
     <draggable
       class="dragArea list-group plugins"
+      :scroll-sensitivity="200"
+      :force-fallback="true"
       :list="plugins"
       @change="change()"
     >
@@ -85,11 +87,11 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
 .plugins-manager {
-  background-color: $body_background;
-}
-.plugins {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  width: 257px;
+  height: 737px;
+  background: #5a5a5a;
+  border-radius: 32px;
+  padding: 20px 10px;
+  padding-top: 40px;
 }
 </style>

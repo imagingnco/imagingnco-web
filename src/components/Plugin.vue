@@ -1,36 +1,46 @@
 <template>
-  <div class="plugin" v-if="plugin">
-    <Icon v-if="icon && !enabled" :src="icon" />
-    <div>
-      <h2>{{ plugin.name() }}</h2>
-      <Checkbox :checked="enabled" @update:checked="updateEnabled($event)" />
-    </div>
-    <div v-if="enabled">
-      <span>{{ plugin.description() }}</span>
-      <div v-if="ui && config">
-        <component
-          :key="pluginKey"
-          :is="ui"
-          :defaultConfig="config"
-          @changeConfig="updateConfig($event)"
-        ></component>
-      </div>
-      <div v-else>
-        <PluginConfig
-          :key="pluginKey"
-          :defaultConfig="config"
-          @changeConfig="updateConfig($event)"
+  <div class="content">
+    <div class="plugin" v-if="plugin">
+      <div class="icons">
+        <div><img src="../assets/drag.png" /></div>
+        <span />
+        <Checkbox
+          id="checkbox"
+          :checked="enabled"
+          @update:checked="updateEnabled($event)"
         />
       </div>
+      <div>
+        <h2>{{ plugin.name() }}</h2>
+      </div>
+      <div v-if="enabled">
+        <span>{{ plugin.description() }}</span>
+        <div v-if="ui && config">
+          <component
+            :key="pluginKey"
+            :is="ui"
+            :defaultConfig="config"
+            @changeConfig="updateConfig($event)"
+          ></component>
+        </div>
+        <div v-else>
+          <PluginConfig
+            :key="pluginKey"
+            :defaultConfig="config"
+            @changeConfig="updateConfig($event)"
+          />
+        </div>
+      </div>
     </div>
+    <div id="line"></div>
   </div>
 </template>
 
 <script lang="ts">
 import { shallowRef, Ref, defineComponent } from "vue";
 import PluginConfig from "./PluginConfig.vue";
-import {PluginModule} from "../models/plugin_module";
-import {Config} from "../models/config";
+import { PluginModule } from "../models/plugin_module";
+import { Config } from "../models/config";
 import Checkbox from "./Checkbox.vue";
 import Icon from "./Icon.vue";
 import {
@@ -148,17 +158,25 @@ export default defineComponent({
 </script>
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
-.plugin {
-  margin: 10px;
-  padding: 10px;
-  min-width: 250px;
-  min-height: 250px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px $shadow;
-  text-align: center;
+.content {
+  position: relative;
+}
+.icons {
+  width: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#checkbox {
+  transform: scale(0.5);
+}
+.plugin {
+  min-width: 160px;
+  height: 50px;
+  background: #5a5a5a;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 .plugin:hover {
@@ -166,9 +184,21 @@ export default defineComponent({
   transform: scale(1.1);
 }
 .plugin h2 {
-  font-weight: normal;
+  margin: 5px;
+  font-family: "Quicksand";
   font-style: normal;
-  font-size: 14pt;
-  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+
+  color: #ffffff;
+}
+#line {
+  position: absolute;
+  width: 121px;
+  height: 0px;
+  left: 50px;
+  bottom: 3px;
+  border: 1px solid #8a8a8a;
 }
 </style>

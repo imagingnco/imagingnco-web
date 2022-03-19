@@ -12,11 +12,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "Footer"
+  name: "Footer",
 });
 </script>
 <style scoped>
 .footer {
   text-align: center;
+  height: 65px;
+  color: white;
+  background: #5a5a5a;
 }
 </style>
