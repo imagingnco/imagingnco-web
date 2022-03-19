@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="main">
-      <h1>Convert images online without upload of your data</h1>
       <h2 v-if="just">{{ just }}</h2>
       <div class="top_main">
         <ImageUpload
@@ -168,6 +167,9 @@ export default defineComponent({
   padding: 150px;
   padding-top: 120px;
   text-align: center;
+  background-image: url("../assets/processbg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .main h1 {
   text-transform: uppercase;

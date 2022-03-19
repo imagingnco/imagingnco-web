@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main">
-      <h1>Convert images online without upload of your data</h1>
+      <h1>Convert images online<br/> without upload of your data</h1>
       <Mountains />
       <router-link class="process-image-button" to="/batch">Process Image</router-link>
       <AboutProject />

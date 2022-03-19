@@ -12,8 +12,12 @@
       ref="upload"
       class="file-upload"
     >
-      drop<br />or<br />select files</FileUpload
-    >
+      <div class="upload-container">
+        <img src="../assets/add_image.svg" />
+        <div class="upload-text">Drop files here<br />or</div>
+        <div id="upload-button">Select Files...</div>
+      </div>
+    </FileUpload>
     <div v-if="images.length > 0" class="image-container">
       <div
         v-for="(src, index) in images"
@@ -106,7 +110,6 @@ export default defineComponent({
   justify-content: center;
 }
 .file-upload {
-  text-transform: uppercase;
   font-size: 14pt;
   margin: 10px;
   display: flex;
@@ -121,5 +124,38 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
+}
+
+.upload-container {
+  align-content: space-around;
+}
+
+.upload-text {
+  width: 228px;
+  height: 95px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 34px;
+  text-align: center;
+  color: #5c5c5c;
+}
+#upload-button {
+  margin: 20px;
+  padding: 8px;
+  width: 151px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  color: #000000;
+  text-align: center;
 }
 </style>
