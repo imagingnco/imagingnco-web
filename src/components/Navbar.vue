@@ -69,6 +69,7 @@ $navbar_padding: 20px;
   position: absolute;
   top: 10px;
   left: 2%;
+  padding: 10px;
 }
 
 #banner img {
