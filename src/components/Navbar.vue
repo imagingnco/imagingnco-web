@@ -2,7 +2,7 @@
   <div class="navbar">
     <div id="banner"><img src="@/assets/banner.png" /></div>
     <router-link to="/">Home</router-link>
-    <router-link to="/batch">Process Image</router-link>
+    <router-link to="/process">Process Image</router-link>
     <router-link to="/about">Contact us</router-link>
   </div>
 </template>

@@ -11,8 +11,12 @@
       ref="upload"
       class="file-upload"
     >
-      drop or select image</FileUpload
-    >
+      <div class="upload-container">
+        <img src="../assets/add_image.svg" />
+        <div class="upload-text">Drop files here<br />or</div>
+        <div id="upload-button">Select Files...</div>
+      </div>
+    </FileUpload>
     <div id="save">
       <select v-model="filetype">
         <option
@@ -33,7 +37,7 @@
         class="pic"
         @click="() => showImg(index)"
       >
-        <img max-height="800" :src="src" />
+        <img :src="src" />
       </div>
     </div>
     <vue-easy-lightbox
@@ -189,17 +193,12 @@ export default defineComponent({
   margin: 10px;
   width: 300px;
   height: 350px;
-  background-color: $background_color;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 10px 5px 5px $shadow;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .file-upload {
-  text-transform: uppercase;
   font-size: 14pt;
   margin: 10px;
   display: flex;
@@ -209,19 +208,55 @@ export default defineComponent({
 .file-upload:hover {
   transform: scale(1.05);
 }
+.image-container {
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.upload-container {
+  align-content: space-around;
+}
+.upload-text {
+  width: 228px;
+  height: 95px;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 34px;
+  text-align: center;
+  color: #5c5c5c;
+}
+#upload-button {
+  margin: 20px;
+  padding: 8px;
+  width: 151px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  color: #000000;
+  text-align: center;
+}
 .image-preview {
   margin: 10px;
-  width: 800px;
-  height: 600px;
-  background-color: $background_color;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 10px 5px 5px $shadow;
+  width: 100%;
   align-items: center;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .image-container {
   height: 600px;

@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
-import Batch from "@/views/Batch.vue";
+import Process from "@/views/Process.vue";
 import About from "@/views/About.vue";
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/batch",
-    name: "Batch",
-    component: Batch,
+    path: "/process",
+    name: "Process",
+    component: Process,
   },
   {
     path: "/about",

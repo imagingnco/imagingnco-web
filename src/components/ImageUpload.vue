@@ -125,7 +125,6 @@ export default defineComponent({
   flex-wrap: wrap;
   overflow-y: auto;
 }
-
 .upload-container {
   align-content: space-around;
 }

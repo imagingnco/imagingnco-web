@@ -3,7 +3,7 @@
     <div class="main">
       <h1>Convert images online<br/> without upload of your data</h1>
       <Mountains />
-      <router-link class="process-image-button" to="/batch">Process Image</router-link>
+      <router-link class="process-image-button" to="/process">Process Image</router-link>
       <AboutProject />
       <HowToConvert />
     </div>
