@@ -13,11 +13,14 @@
     >
       <div class="upload-container">
         <img src="../assets/add_image.svg" />
-        <div class="upload-text">Drop files here<br />or</div>
-        <div id="upload-button">Select Files...</div>
+        <div v-if="imgs.length < 1" class="upload-text">Drop files here<br />or</div>
+        <div v-if="imgs.length< 1" id="upload-button">Select Files...</div>
       </div>
     </FileUpload>
-    <div id="save">
+    <div v-if="imgs.length > 0" id="save">
+      <div v-on:click="downloadZip">
+        <img src="../assets/download.svg" /> Download
+      </div>
       <select v-model="filetype">
         <option
           v-for="option in options"
@@ -27,7 +30,6 @@
           {{ option.text }}
         </option>
       </select>
-      <p v-on:click="downloadZip">save image</p>
     </div>
     <br />
     <div v-if="imgs.length > 0" class="image-container">
@@ -265,15 +267,26 @@ export default defineComponent({
   overflow-y: auto;
 }
 #save {
-  text-transform: uppercase;
-  font-size: 14pt;
+  display: flex;
+  position: absolute;
+  top: 24px;
+  left: 600px;
   cursor: pointer;
-  margin: 10px;
+
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #aaaaaa;
 }
 #save:hover {
   transform: scale(1.05);
 }
 #save select {
+  margin: 0px 10px;
   height: 40px;
   min-width: 60px;
   color: $text_color;
