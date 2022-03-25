@@ -1,0 +1,10 @@
+{
+    "plugins": {
+        "blur": "https://lenna.app/lenna-plugins/blur/remoteEntry.js",
+        "canny": "https://lenna.app/lenna-plugins/canny/remoteEntry.js",
+        "dramatic": "https://lenna.app/lenna-plugins/dramatic/remoteEntry.js",
+        "rotate": "https://lenna.app/lenna-plugins/rotate/remoteEntry.js",
+        "sepia": "https://lenna.app/lenna-plugins/sepia/remoteEntry.js",
+        "sharpen": "https://lenna.app/lenna-plugins/sharpen/remoteEntry.js"
+    }
+}

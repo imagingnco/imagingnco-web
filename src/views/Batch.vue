@@ -111,7 +111,7 @@ export default defineComponent({
     },
     loadDefaultPluginJson() {
       this.pluginManager.importPluginsJson(
-        "https://lenna.app/lenna-plugins/plugins.json"
+        "/plugins.json"
       );
     },
     loadAddedPlugins() {
