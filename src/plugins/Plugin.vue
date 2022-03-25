@@ -23,13 +23,18 @@
       </div>
     </div>
     <div v-if="enabled">
-      <div v-if="plugin.name() == 'blur'">
-        <Blur
-          :key="pluginKey"
-          :defaultConfig="config"
-          @changeConfig="updateConfig($event)"
-        />
-      </div>
+      <Blur
+        v-if="plugin.name() == 'blur'"
+        :key="pluginKey"
+        :defaultConfig="config"
+        @changeConfig="updateConfig($event)"
+      />
+      <Canny
+        v-if="plugin.name() == 'canny'"
+        :key="pluginKey"
+        :defaultConfig="config"
+        @changeConfig="updateConfig($event)"
+      />
     </div>
     <div id="line"></div>
   </div>
@@ -38,6 +43,7 @@
 <script lang="ts">
 import { shallowRef, Ref, defineComponent } from "vue";
 import Blur from "./Blur.vue";
+import Canny from "./Canny.vue";
 import { PluginModule } from "../models/plugin_module";
 import { Config } from "../models/config";
 import Checkbox from "../components/Checkbox.vue";
@@ -71,6 +77,7 @@ export default defineComponent({
     Checkbox,
     Icon,
     Blur,
+    Canny,
     PluginTitle,
   },
   data(): PluginData {
