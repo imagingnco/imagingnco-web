@@ -2,8 +2,6 @@
   <div class="plugins-manager">
     <draggable
       class="dragArea list-group plugins"
-      :scroll-sensitivity="200"
-      :force-fallback="true"
       :list="plugins"
       @change="change()"
     >
@@ -24,7 +22,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { VueDraggableNext } from "vue-draggable-next";
-import Plugin from "../components/Plugin.vue";
+import Plugin from "../plugins/Plugin.vue";
 import { LennaPlugin } from "../models/plugin";
 import { PluginManager } from "../controllers/plugin_manager";
 
