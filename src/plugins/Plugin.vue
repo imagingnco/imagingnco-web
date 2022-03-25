@@ -1,12 +1,18 @@
 <template>
   <div class="content">
     <div class="plugin" v-if="plugin">
-      <div class="icons">
-        <div><img src="../assets/drag.png" /></div>
+      <div class="head">
+        <div><img id="drag-icon" src="../assets/drag.png" /></div>
         <span />
-      </div>
-      <div>
-        {{ plugin.name() }}
+        <plugin-title :title="plugin.name()">
+          <img v-if="plugin.name() == 'blur'" src="../assets/blur.svg" />
+          <img
+            v-if="plugin.name() == 'dramatic'"
+            src="../assets/dramatic.svg"
+          />
+          <img v-if="plugin.name() == 'sharpen'" src="../assets/sharpen.svg" />
+          <img v-if="plugin.name() == 'sepia'" src="../assets/sepia.svg" />
+        </plugin-title>
       </div>
       <div class="icons">
         <Checkbox
@@ -35,6 +41,7 @@ import Blur from "./Blur.vue";
 import { PluginModule } from "../models/plugin_module";
 import { Config } from "../models/config";
 import Checkbox from "../components/Checkbox.vue";
+import PluginTitle from "../components/PluginTitle.vue";
 import Icon from "../components/Icon.vue";
 import {
   loadConfig,
@@ -64,6 +71,7 @@ export default defineComponent({
     Checkbox,
     Icon,
     Blur,
+    PluginTitle,
   },
   data(): PluginData {
     return {
@@ -153,6 +161,15 @@ export default defineComponent({
 @import "@/styles/_variables.scss";
 .content {
   position: relative;
+}
+.head {
+  width: 150px;
+  display: flex;
+}
+#drag-icon {
+  width: 12px;
+  height: 16px;
+  margin: 3px;
 }
 .icons {
   width: 20px;
