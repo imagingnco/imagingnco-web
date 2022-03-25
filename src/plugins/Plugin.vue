@@ -35,6 +35,12 @@
         :defaultConfig="config"
         @changeConfig="updateConfig($event)"
       />
+      <Rotate
+        v-if="plugin.name() == 'rotate'"
+        :key="pluginKey"
+        :defaultConfig="config"
+        @changeConfig="updateConfig($event)"
+      />
     </div>
     <div id="line"></div>
   </div>
@@ -44,6 +50,7 @@
 import { shallowRef, Ref, defineComponent } from "vue";
 import Blur from "./Blur.vue";
 import Canny from "./Canny.vue";
+import Rotate from "./Rotate.vue";
 import { PluginModule } from "../models/plugin_module";
 import { Config } from "../models/config";
 import Checkbox from "../components/Checkbox.vue";
@@ -78,6 +85,7 @@ export default defineComponent({
     Icon,
     Blur,
     Canny,
+    Rotate,
     PluginTitle,
   },
   data(): PluginData {
