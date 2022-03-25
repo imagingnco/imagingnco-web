@@ -1,0 +1,1 @@
+{"version":3,"file":"Canny.vue.d.ts","sourceRoot":"","sources":["../../../src/plugins/Canny.vue.ts"],"names":[],"mappings":"AAGA,OAAO,qCAAqC,CAAC;AAE7C,MAAM,WAAW,OAAO;IACtB,CAAC,GAAG,EAAE,MAAM,GAAG,GAAG,CAAC;CACpB;AAED,UAAU,MAAM;IACd,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE,GAAG,CAAC;CACZ;AAED,OAAO,WAAW,gBAAgB;IAChC,MAAM,EAAE,MAAM,EAAE,CAAC;CAClB;;;;;;;;AAED,wBA6BG"}
