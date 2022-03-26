@@ -17,19 +17,9 @@
         <div v-if="imgs.length< 1" id="upload-button">Select Files...</div>
       </div>
     </FileUpload>
+    
     <div v-if="imgs.length > 0" id="save">
-      <div v-on:click="downloadZip">
-        <img src="../assets/download.svg" /> Download
-      </div>
-      <select v-model="filetype">
-        <option
-          v-for="option in options"
-          :value="option.value"
-          :key="option.text"
-        >
-          {{ option.text }}
-        </option>
-      </select>
+      <download-button :onClick="downloadZip" :filetype="filetype" @update:filetype="filetype = $event" />
     </div>
     <br />
     <div v-if="imgs.length > 0" class="image-container">
@@ -55,6 +45,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import FileUpload from "vue-upload-component";
+import DownloadButton from "./DownloadButton.vue";
 import VueEasyLightbox from "vue-easy-lightbox";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
@@ -79,6 +70,7 @@ declare interface ImageUploadPreviewData {
 export default defineComponent({
   components: {
     FileUpload,
+    DownloadButton,
     VueEasyLightbox,
   },
   props: {
@@ -267,35 +259,12 @@ export default defineComponent({
   overflow-y: auto;
 }
 #save {
-  display: flex;
   position: absolute;
-  top: 24px;
+  top: 16px;
   left: 600px;
-  cursor: pointer;
-
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  /* identical to box height */
-
-  color: #aaaaaa;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 #save:hover {
   transform: scale(1.05);
-}
-#save select {
-  margin: 0px 10px;
-  height: 40px;
-  min-width: 60px;
-  color: $text_color;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  outline: none;
-  background-color: white;
 }
 </style>
