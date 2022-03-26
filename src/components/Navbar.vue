@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <div id="banner"><img src="@/assets/banner.png" /></div>
+    <div id="banner"><img src="@/assets/banner.svg" /></div>
     <router-link to="/">Home</router-link>
     <router-link to="/process">Process Image</router-link>
     <router-link to="/about">Contact us</router-link>
@@ -49,22 +49,6 @@ $navbar_padding: 20px;
   color: #ffffff;
 }
 
-/*
-.navbar a:hover {
-  background-color: $primary_color;
-}
-.navbar .router-link-active {
-  color: white;
-  background-color: $primary_color;
-}
-
-.navbar a:active {
-  background-color: $primary_color;
-  transform: translateY(8px);
-  opacity: 0.5;
-}
-*/
-
 #banner {
   position: absolute;
   top: 10px;
@@ -73,7 +57,8 @@ $navbar_padding: 20px;
 }
 
 #banner img {
-  max-height: 46px;
+  height: 29px;
+  width: 214px;
 }
 
 @media screen and (max-width: 800px) {
