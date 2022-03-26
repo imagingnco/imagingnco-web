@@ -43,7 +43,7 @@ export default defineComponent({
 }
 .checkbox > input {
   height: 40px;
-  width: 50px;
+  width: 40px;
   position: absolute;
   left: -25px;
   top: 0rem;
@@ -61,13 +61,17 @@ export default defineComponent({
   background-color: #363636
 }
 .checkbox > input:checked + span::before {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
   font-size: 2.4em;
-  content: "\2713";
+  content: "";
   text-align: center;
   color: white;
   position: absolute;
-  left: -0.5rem;
-  top: 0rem;
+  left: -15px;
+  top: 8px;
 }
 .checkbox > input:active {
   border: 2px solid #34495e;

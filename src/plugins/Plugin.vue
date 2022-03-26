@@ -205,15 +205,6 @@ export default defineComponent({
   justify-content: space-between;
   text-transform: uppercase;
 }
-.plugin h2 {
-  margin: 5px;
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 21px;
-  color: #ffffff;
-}
 #line {
   position: absolute;
   width: 121px;
