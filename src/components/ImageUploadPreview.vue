@@ -13,13 +13,24 @@
     >
       <div class="upload-container">
         <img src="../assets/add_image.svg" />
-        <div v-if="imgs.length < 1" class="upload-text">Drop files here<br />or</div>
-        <div v-if="imgs.length< 1" id="upload-button">Select Files...</div>
+        <div v-if="imgs.length < 1" class="upload-text">
+          Drop files here
+          <div id="or-line">
+            <div class="line" />
+            or
+            <div class="line" />
+          </div>
+        </div>
+        <div v-if="imgs.length < 1" id="upload-button">Select Files...</div>
       </div>
     </FileUpload>
-    
+
     <div v-if="imgs.length > 0" id="save">
-      <download-button :onClick="downloadZip" :filetype="filetype" @update:filetype="filetype = $event" />
+      <download-button
+        :onClick="downloadZip"
+        :filetype="filetype"
+        @update:filetype="filetype = $event"
+      />
     </div>
     <br />
     <div v-if="imgs.length > 0" class="image-container">
@@ -202,25 +213,29 @@ export default defineComponent({
 .file-upload:hover {
   transform: scale(1.05);
 }
-.image-container {
-  height: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: auto;
-}
 .upload-container {
-  align-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload-container img {
+  height: 83px;
+  width: 83px;
+  padding: 5px;
 }
 .upload-text {
-  width: 228px;
-  height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   font-family: "Quicksand";
+  font-size: 27px;
   font-style: normal;
   font-weight: 500;
-  font-size: 27px;
   line-height: 34px;
+  letter-spacing: 0em;
   text-align: center;
-  color: #5c5c5c;
+  color: #5C5C5C;
 }
 #upload-button {
   margin: 20px;
@@ -266,5 +281,18 @@ export default defineComponent({
 }
 #save:hover {
   transform: scale(1.05);
+}
+#or-line {
+  margin: 10px;
+  display: flex;
+  font-size: 18px;
+}
+.line {
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 34px;
+  height: 0px;
+  border: 2px solid #6c6c6c;
 }
 </style>
